@@ -25,3 +25,12 @@ hs_err_pid*
 # tmp files
 *~
 *#
+
+
+# maven files
+
+target
+
+# eclipse tmp files
+.classpath
+.project
