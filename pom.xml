@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -52,8 +53,45 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.20.1</version>
+				<configuration>
+					<images>
+						<image>
+							<name>${project.name}:${project.version}</name>
+							<build>
+								<from>openjdk:9</from>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<ports>
+									<port>8080</port>
+								</ports>
+								<cmd>java -jar maven/${project.name}-${project.version}.jar initdata</cmd>
+							</build>
+							<run>
+								<ports>
+									<port>8080:8080</port>
+								</ports>
+								<wait>
+									<log>Tomcat started on port</log>
+								</wait>
+							</run>
+						</image>
+					</images>
+				</configuration>
+				<executions>
+					<execution>
+						<id>docker:build</id>
+						<phase>install</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
