@@ -6,7 +6,7 @@ services:
     ports:
     - 27017:27017
   web:
-    image: graphql-vs-rest:0.0.1-SNAPSHOT
+    image: graphql-vs-rest:0.0.1
     links:
     - mongo
     ports:
