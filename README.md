@@ -92,4 +92,12 @@ To retrieve comments for specific port run this command
 
 ```
 curl http://localhost:8080/comments?post_id=<post id>
+
+## TAGS
+
+### rest-0.1
+
+REST points done
+
+ 
 ```

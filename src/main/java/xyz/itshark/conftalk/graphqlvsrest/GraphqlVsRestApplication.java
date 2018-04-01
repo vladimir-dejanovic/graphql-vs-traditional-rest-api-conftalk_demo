@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 import xyz.itshark.conftalk.graphqlvsrest.pojo.Author;
@@ -41,6 +42,13 @@ public class GraphqlVsRestApplication {
 			}
 		};
 	}
+	
+	@Bean
+	@Autowired
+	public ServletRegistrationBean graphQLServlet(PostRepository postRepository) {
+		return new ServletRegistrationBean(new GraphQLEntryPoint(postRepository),"/graphql");
+	}
+
 	
 	public static void main(String[] args) {
 		SpringApplication.run(GraphqlVsRestApplication.class, args);

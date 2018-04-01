@@ -1,0 +1,26 @@
+type Author {
+  id: ID!
+  name: String!
+ }
+ 
+type Post {
+  id: ID!
+  title: String!
+  body: String
+  authorId: String!
+}
+
+ type Comment {
+  id: ID!
+  authorId: String!
+  postId: String!
+  text: String
+ }
+
+schema {
+  query: Query
+}
+
+type Query {
+  allPosts: [Post]
+}
