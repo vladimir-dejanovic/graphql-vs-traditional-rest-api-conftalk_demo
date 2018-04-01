@@ -28,7 +28,7 @@ mvn clean install
 java -jar target/graphql-vs-rest-0.0.1-SNAPSHOT.jar
 ```
 
-If you want to also initalize some init date run with additiaonal paramater
+If you want to also initalize some init data run with additiaonal paramater
 
 ```
 java -jar target/graphql-vs-rest-0.0.1-SNAPSHOT.jar initdata
