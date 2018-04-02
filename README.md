@@ -189,3 +189,8 @@ and response should be like this
 
 REST points done
 - [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/rest-0.1](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/rest-0.1)
+
+### graphql-0.1
+
+GraphQL end point with init GraphQL schema
+- [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.1](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.1)
