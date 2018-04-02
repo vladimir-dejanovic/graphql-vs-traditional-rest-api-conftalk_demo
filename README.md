@@ -25,13 +25,13 @@ mvn clean install
 
 
 ```
-java -jar target/graphql-vs-rest-0.0.5.jar
+java -jar target/graphql-vs-rest-0.0.6-SNAPSHOT.jar
 ```
 
 If you want to also initalize some init data run with additiaonal paramater
 
 ```
-java -jar target/graphql-vs-rest-0.0.5.jar initdata
+java -jar target/graphql-vs-rest-0.0.6-SNAPSHOT.jar initdata
 
 ```
 
@@ -293,3 +293,9 @@ Updated GraphQL schema, so that Author can be accessed through Post
 Full GraphQL schema, with all resources connected were made sense 
 
 - [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.3](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.3)
+
+### graphql-0.4
+
+Added mutations to GraphQL, option to add and remove authors
+
+- [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.4](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.4)
