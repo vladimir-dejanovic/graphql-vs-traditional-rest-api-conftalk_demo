@@ -1,4 +1,4 @@
-# graphql-vs-traditional-rest-api-conftalk_demo
+# GraphQL vs Traditional REST API with MongoDB - Conference talk demo
 
 This is demo code for my conference talk GraphQL vs Traditional REST API. I had two repos which are combined and improved in this one
 - [https://github.com/vladimir-dejanovic/simple-springboot-rest-mongo-conftalk-demo](https://github.com/vladimir-dejanovic/simple-springboot-rest-mongo-conftalk-demo)
