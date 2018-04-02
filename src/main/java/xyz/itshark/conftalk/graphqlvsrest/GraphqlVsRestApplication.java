@@ -44,9 +44,8 @@ public class GraphqlVsRestApplication {
 	}
 	
 	@Bean
-	@Autowired
-	public ServletRegistrationBean graphQLServlet(PostRepository postRepository) {
-		return new ServletRegistrationBean(new GraphQLEntryPoint(postRepository),"/graphql");
+	public ServletRegistrationBean graphQLServlet(PostRepository postRepository,AuthorRepository authRepository) {
+		return new ServletRegistrationBean(new GraphQLEntryPoint(postRepository,authRepository),"/graphql");
 	}
 
 	
