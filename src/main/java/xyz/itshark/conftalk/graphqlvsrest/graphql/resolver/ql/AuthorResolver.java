@@ -1,4 +1,4 @@
-package xyz.itshark.conftalk.graphqlvsrest.pojo;
+package xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.ql;
 
 /*     
 Code used in demo for my talk GraphQL vs REST API
@@ -19,23 +19,21 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
 
-import javax.validation.constraints.NotNull;
+import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.coxautodev.graphql.tools.GraphQLResolver;
 
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import xyz.itshark.conftalk.graphqlvsrest.pojo.Author;
+import xyz.itshark.conftalk.graphqlvsrest.pojo.Post;
+import xyz.itshark.conftalk.graphqlvsrest.repository.PostRepository;
 
-@Data
-@Document(collection="posts")
-public class Post {
-
-	@Id
-	private final String id;
-		
-	@NotNull
-	private final String authorId;
+@RequiredArgsConstructor
+public class AuthorResolver implements GraphQLResolver<Author> {
 	
-	private final String title;
-	private final String body;
+	private final PostRepository postRepository;
+	
+	public List<Post> posts(Author auth) {
+		return postRepository.findByAuthorId(auth.getId());
+	}
 }
