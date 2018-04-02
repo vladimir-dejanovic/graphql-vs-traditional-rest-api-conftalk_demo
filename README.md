@@ -119,7 +119,6 @@ query {
   allPosts {
     id
     title
-    authorId
     body
   }
 }
@@ -134,13 +133,11 @@ Response should be something like this
       {
         "id": "321",
         "title": "Who is Radial Edward",
-        "authorId": "123",
         "body": "Edward Wong Hau Pepelu Tivrusky IV (エドワード・ウォン・ハウ・ペペル・チブルスキー4世 Edowādo Won Hau Peperu Chiburusukī 4-sei?), commonly called Ed, colloquially known as Radical Edward and born on January 1, 2058 as Françoise Appledelhi, is a child prodigy skilled in hacking originally from Earth. She is a comically-eccentric teenager around 13 years of age."
       },
       {
         "id": "543",
         "title": "Who is Son Goku",
-        "authorId": "345",
         "body": "Son Goku (孫悟空 Son Gokū), born Kakarot (カカロット Kakarotto), is a male Saiyan and the main protagonist of the Dragon Ball meta-series created by Akira Toriyama. Cheerful, tenacious, and also a bit naïve, Goku is a Saiyan originally sent to Earth as an infant with the mission to destroy it. However, an accident alters his memory, causing him to grow up pure-hearted and later become Earth's greatest defender, as well as the informal leader of the Dragon Team. Throughout his life, he trains hard and constantly strives to be the greatest warrior possible and to fight stronger opponents, which has kept the Earth and the Universe safe from destruction many times"
       }
     ]
@@ -181,6 +178,44 @@ and response should be like this
   }
 }
 ``` 
+
+### Get Author data in response
+
+Since now Author is part of Post in schema, we can request this info in our query
+
+```
+query {  
+  allPosts {
+   title
+   createdBy {
+    name
+  } 
+  }
+}
+```
+
+should produce this response
+
+```
+{
+  "data": {
+    "allPosts": [
+      {
+        "title": "Who is Radial Edward",
+        "createdBy": {
+          "name": "Ed Wong IV"
+        }
+      },
+      {
+        "title": "Who is Son Goku",
+        "createdBy": {
+          "name": "Son Goku"
+        }
+      }
+    ]
+  }
+}
+```
 
 
 ## TAGS
