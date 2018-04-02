@@ -229,3 +229,8 @@ REST points done
 
 GraphQL end point with init GraphQL schema
 - [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.1](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.1)
+
+### graphql-0.2
+
+Updated GraphQL schema, so that Author can be accessed through Post
+- [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.2](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.2)
