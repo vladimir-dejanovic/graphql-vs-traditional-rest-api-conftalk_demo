@@ -234,3 +234,9 @@ GraphQL end point with init GraphQL schema
 
 Updated GraphQL schema, so that Author can be accessed through Post
 - [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.2](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.2)
+
+### graphql-0.3
+
+Full GraphQL schema, with all resources connected were made sense 
+
+- [https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.3](https://github.com/vladimir-dejanovic/graphql-vs-traditional-rest-api-conftalk_demo/releases/tag/graphql-0.3)
