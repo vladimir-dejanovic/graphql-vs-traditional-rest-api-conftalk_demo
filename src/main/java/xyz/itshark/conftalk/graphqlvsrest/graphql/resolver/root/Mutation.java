@@ -35,6 +35,7 @@ public class Mutation implements GraphQLRootResolver {
 	}
 	
 	public Author removeAuthour(String id) {
+		// not best way to deal with optional, but I can't be bothered to do more for demo :)
 		Author auth = authRepo.findById(id).orElseThrow(() -> new NotFoundException());
 		authRepo.delete(auth);
 		return auth;
