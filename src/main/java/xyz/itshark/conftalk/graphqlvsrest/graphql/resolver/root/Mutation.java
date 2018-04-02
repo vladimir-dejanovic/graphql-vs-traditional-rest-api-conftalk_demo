@@ -18,29 +18,25 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-import java.util.List;
-
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
 
 import lombok.RequiredArgsConstructor;
+import xyz.itshark.conftalk.graphqlvsrest.excpetion.NotFoundException;
 import xyz.itshark.conftalk.graphqlvsrest.pojo.Author;
-import xyz.itshark.conftalk.graphqlvsrest.pojo.Post;
 import xyz.itshark.conftalk.graphqlvsrest.repository.AuthorRepository;
-import xyz.itshark.conftalk.graphqlvsrest.repository.PostRepository;
 
 @RequiredArgsConstructor
-public class Query implements GraphQLRootResolver {
-
-	private final PostRepository postRepository;
+public class Mutation implements GraphQLRootResolver {
+	
 	private final AuthorRepository authRepo;
 
-	public List<Post> allPosts() {
-		return postRepository.findAll();
+	public Author addAuthor(String name) {
+		return authRepo.save(new Author(null, name));
 	}
-
-	public List<Author> allAuthors() {
-		return authRepo.findAll();
+	
+	public Author removeAuthour(String id) {
+		Author auth = authRepo.findById(id).orElseThrow(() -> new NotFoundException());
+		authRepo.delete(auth);
+		return auth;
 	}
-
 }

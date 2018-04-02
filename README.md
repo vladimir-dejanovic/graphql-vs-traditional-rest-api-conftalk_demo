@@ -217,6 +217,59 @@ should produce this response
 }
 ```
 
+### Modify data throgh GraphQL
+
+Now that Mutation is added to graphql schema, authers can be added and removed 
+
+#### Add Author
+
+to add author run this query in GraphiQL
+
+```
+mutation {
+  addAuthor(name:"New Author") {
+    id
+    name
+  }
+ }
+```
+
+response should be something like this
+
+```
+{
+  "data": {
+    "addAuthor": {
+      "id": "5ac229d4857aba00078c565f",
+      "name": "New Author"
+    }
+  }
+}
+```
+
+#### Remove Author
+
+to remove auhtour run command like this
+
+```
+mutation {
+  removeAuthour(id: "123") {
+    name
+  }
+}
+```
+
+response should be like this 
+
+```
+{
+  "data": {
+    "removeAuthour": {
+      "name": "Ed Wong IV"
+    }
+  }
+}
+```
 
 ## TAGS
 

@@ -26,6 +26,7 @@ import graphql.servlet.SimpleGraphQLServlet;
 import xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.ql.AuthorResolver;
 import xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.ql.CommentResolver;
 import xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.ql.PostResolver;
+import xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.root.Mutation;
 import xyz.itshark.conftalk.graphqlvsrest.graphql.resolver.root.Query;
 import xyz.itshark.conftalk.graphqlvsrest.repository.AuthorRepository;
 import xyz.itshark.conftalk.graphqlvsrest.repository.CommentRepository;
@@ -42,7 +43,8 @@ public class GraphQLEntryPoint extends SimpleGraphQLServlet {
 				.newParser()
 				.file("schema.graphqls")
 				.resolvers(
-						new Query(postRepository),
+						new Query(postRepository, authRepository),
+						new Mutation(authRepository),						
 						new PostResolver(authRepository,commentRepository),
 						new AuthorResolver(postRepository),
 						new CommentResolver(authRepository,postRepository))
