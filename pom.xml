@@ -45,24 +45,24 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-        <!--  GraphQL -->
+
+		<!--  GraphQL -->
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java</artifactId>
-			<version>3.0.0</version>
+			<version>8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java-tools</artifactId>
-			<version>3.2.0</version>
+			<version>5.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java-servlet</artifactId>
-			<version>4.0.0</version>
+			<version>5.0.0</version>
 		</dependency>
-        <!-- GraphQL end -->		
+		<!-- GraphQL end -->
 		
 	</dependencies>
 
