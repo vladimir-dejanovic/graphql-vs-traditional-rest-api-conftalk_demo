@@ -21,8 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import java.util.List;
 
-import com.coxautodev.graphql.tools.GraphQLRootResolver;
-
+import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import xyz.itshark.conftalk.graphqlvsrest.pojo.Author;
 import xyz.itshark.conftalk.graphqlvsrest.pojo.Post;
@@ -30,7 +29,7 @@ import xyz.itshark.conftalk.graphqlvsrest.repository.AuthorRepository;
 import xyz.itshark.conftalk.graphqlvsrest.repository.PostRepository;
 
 @RequiredArgsConstructor
-public class Query implements GraphQLRootResolver {
+public class Query implements GraphQLQueryResolver {
 
 	private final PostRepository postRepository;
 	private final AuthorRepository authRepo;
