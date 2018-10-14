@@ -34,3 +34,7 @@ target
 # eclipse tmp files
 .classpath
 .project
+
+# ideaj
+.idea/
+*.iml
