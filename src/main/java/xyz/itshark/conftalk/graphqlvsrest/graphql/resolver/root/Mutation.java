@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-import com.coxautodev.graphql.tools.GraphQLRootResolver;
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 
 import lombok.RequiredArgsConstructor;
 import xyz.itshark.conftalk.graphqlvsrest.excpetion.NotFoundException;
@@ -26,7 +26,7 @@ import xyz.itshark.conftalk.graphqlvsrest.pojo.Author;
 import xyz.itshark.conftalk.graphqlvsrest.repository.AuthorRepository;
 
 @RequiredArgsConstructor
-public class Mutation implements GraphQLRootResolver {
+public class Mutation implements GraphQLMutationResolver {
 	
 	private final AuthorRepository authRepo;
 
