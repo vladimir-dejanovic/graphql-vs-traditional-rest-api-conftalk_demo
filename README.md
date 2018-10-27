@@ -271,7 +271,7 @@ response should be like this
 }
 ```
 
-## TAGS
+## Branches
 
 ### rest-0.1
 
